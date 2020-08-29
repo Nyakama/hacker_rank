@@ -5,9 +5,14 @@ import os
 import random
 import re
 import sys
+from collections import Counter
 
 # Complete the sockMerchant function below.
 def sockMerchant(n, ar):
+    sum=0
+    for val in Counter(ar).values():
+        sum+=val//2
+    return sum
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
@@ -21,3 +26,4 @@ if __name__ == '__main__':
     fptr.write(str(result) + '\n')
 
     fptr.close()
+
